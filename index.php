@@ -5,7 +5,7 @@
         <title>Прокат "Детская Всячина"</title>
         <meta name="description" content="Удобно. Практично. Экологично. • Более 2 лет успешной работы • Более 2000 довольных клиентов • Более 180 товаров • 5 видов очистки товаров" />
     </head>
-    <body onload="removeAd()">
+    <body>
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
         </header>

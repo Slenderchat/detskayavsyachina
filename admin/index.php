@@ -5,7 +5,7 @@
         <title>Администратор</title>
         <meta name="description" content="Администратор" />
     </head>
-    <body onload="removeAd()">
+    <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
         <div class="stretchrow row">
             <div class="table">

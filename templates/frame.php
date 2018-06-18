@@ -5,7 +5,7 @@
         <title></title>
         <meta name="description" content="" />
     </head>
-    <body onload="removeAd()">
+    <body>
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
         </header>

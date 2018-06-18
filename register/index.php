@@ -11,7 +11,7 @@
         <title>Регистрация</title>
         <meta name="description" id="description" content="Регистрация" />
     </head>
-    <body onload="removeAd()">
+    <body>
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
         </header>

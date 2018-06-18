@@ -24,7 +24,7 @@
         <title><?php echo $name; ?></title>
         <meta name="description" content="<?php echo $name; ?>" />
     </head>
-    <body onload="removeAd()">
+    <body>
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
         </header>

@@ -1,10 +1,3 @@
-function removeAd() {
-    "use strict";
-    var elements = document.querySelectorAll('body div[style = "text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;display:block !important;"]'), i;
-    for (i = 0; i < elements.length; i += 1) {
-        elements[i].remove();
-    }
-}
 var isMenuShown = false;
 function toggleMenu() {
     "use strict";
