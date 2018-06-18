@@ -175,6 +175,31 @@ header .headerwrap{
     right: -20px;
     top:50%;
 }
+.userForm{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.userForm input{
+    text-align: center;
+    padding: 5px;
+    font-size: 1rem;
+    color: white;
+    background-color: #3A3335;
+    border: #3A3335 solid 2px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.userForm input:invalid{
+    border-color: #D81E5B;
+}
+.userForm input:valid{
+    border-color: green;
+}
+.userForm label{
+    display: none;
+}
 @media screen and (min-width: 375px){
     header{
         height: 100px;

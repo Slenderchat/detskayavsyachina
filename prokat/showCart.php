@@ -2,7 +2,7 @@
     session_start();
     if(!empty($_SESSION['id'])) {
         $id = $_GET['id'];
-        $conn = new mysqli("localhost", "id6035521_detskayavsyachina", "detskayavsyachina", "id6035521_users");
+        $conn = new mysqli("a236477.mysql.mchost.ru", "a236477_1", "fwvm52cy9N5A", "a236477_1");
         $res = $conn->query("SELECT * FROM goods WHERE id=$id")->fetch_assoc();
         echo
         "<form class='goodiePopup' name=\"addtocart\" method='post' action='addtocart.php'>

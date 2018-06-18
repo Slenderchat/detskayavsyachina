@@ -5,7 +5,7 @@
     }
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $conn = new mysqli("localhost", "id6035521_detskayavsyachina", "detskayavsyachina", "id6035521_users");
+    $conn = new mysqli("a236477.mysql.mchost.ru", "a236477_1", "fwvm52cy9N5A", "a236477_1");
     $uname = $conn->query("SELECT username, email, password FROM credentails WHERE username='$username' OR email='$username'");
     $upass = $conn->query("SELECT password FROM credentails WHERE password='$password'");
     if($uname->num_rows == 1 && $upass->num_rows == 1){

@@ -2,7 +2,7 @@
     @$num = $_GET['num'];
     @$search = $_GET['search'];
     @$category = $_GET['category'];
-    $conn = new mysqli("localhost", "id6035521_detskayavsyachina", "detskayavsyachina", "id6035521_users");
+    $conn = new mysqli("a236477.mysql.mchost.ru", "a236477_1", "fwvm52cy9N5A", "a236477_1");
     $conn->query("SET NAMES utf8");
     $query = "SELECT id, name, description, price, thumb FROM goods WHERE 1";
     if($category == "Все"){

@@ -12,25 +12,22 @@
         <meta name="description" content="Вход" />
     </head>
     <body onload="removeAd()">
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-        <div class="stretchrow row">
-            <div class="table">
-                <div class="cell content">
-                    <form name="login" method="post" action="/dologin.php">
-                        <div class="formcontainer">
-                            <input class="formelement" type="text" name="username" placeholder="Введите имя пользователя или номер телефона">
-                        </div>
-                        <div class="formcontainer">
-                            <input class="formelement" type="password" name="password" placeholder="Введите пароль">
-                        </div>
-                        <div class="formcontainer">
-                            <input class="formelement" type="submit" value="Войти">
-                        </div>
-                    </form>
-                </div>
+        <header>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
+        </header>
+        <div class="wrap">
+            <div class="menu">
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'; ?>
+            </div>
+            <div class="content">
+                <form name="login" method="post" action="/dologin.php" class="userForm">
+                    <input type="text" name="username" placeholder="Введите имя пользователя или номер телефона">
+                    <input type="password" name="password" placeholder="Введите пароль">
+                    <input type="submit" value="Войти">
+                </form>
             </div>
         </div>
-        <script src="/scripts/index.js"></script>
+    <script src="/scripts/index.js"></script>
     </body>
 </html>
                             
