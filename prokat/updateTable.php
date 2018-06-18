@@ -16,10 +16,10 @@
     elseif(empty($search) && !empty($category)){
         $query .= " AND album = '$category'";
     }
-    else{
-        $query .= " AND id BETWEEN 1 AND 10";
+    $query .= " ORDER BY price DESC";
+    if(empty($search) && empty($category)){
+        $query .= " LIMIT 10";
     }
-    $query .= " ORDER BY price ASC";
     $result = $conn->query($query);
     while($res = $result->fetch_assoc()){
         $title = $res['name'];
@@ -41,7 +41,7 @@
             </div>
             <div class=\"goodieControls\">
                 <a class=\"button\" title=\"К описанию\" href=\"/prokat/tovar/?id=$id\">К описанию</a>
-                <a class=\"button\" title=\"В корзину\" href=\"#\" onclick='showCartProkat(this, $id)'>В корзину</a>
+                <a class=\"button\" title=\"В корзину\" href=\"#\" onclick='showCart(this, $id, \"prokat\")'>В корзину</a>
             </div>
         </div>";
     }

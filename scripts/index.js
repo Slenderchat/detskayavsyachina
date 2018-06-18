@@ -40,24 +40,17 @@ function doScroll(dir){
         imgview.scrollLeft += 200;
     }
 }
-function showCart(goodie, id) {
+function showCart(goodie, id, from) {
     "use strict";
     var good = goodie.parentNode.parentNode, popup = document.createElement('div'), req = new XMLHttpRequest();
-    popup.style.position = 'absolute';
-    popup.style.left = '0px';
-    popup.style.top = '0px';
-    popup.style.width = '100%';
-    popup.style.height = '100%';
-    popup.style.fontSize = '0.8em';
-    popup.style.borderRadius = '8px';
-    popup.style.backgroundColor = '#595959';
+    popup.className = 'goodiePopup';
     good.appendChild(popup);
     req.onreadystatechange = function () {
         if(this.readyState === 4 && this.status === 200){
             popup.innerHTML = this.responseText;
         }
     };
-    req.open("GET", "showcart.php?id=" + id);
+    req.open("GET", "/prokat/showCart.php?id=" + id);
     req.send();
 }
 function loadGoodies(from){

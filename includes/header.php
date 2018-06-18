@@ -13,6 +13,6 @@
         ?>
     </div>
     <div class="right">
-        <a title="В корзину" href="/cart"><i class="material-icons">shopping_cart</i></a>
+        <a title="В корзину" href="/korzina"><i class="material-icons">shopping_cart</i></a>
     </div>
 </div>

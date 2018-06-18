@@ -13,13 +13,16 @@
     }elseif(!empty($search) && empty($category)){
         $query .= " AND name LIKE '%$search%'";
     }
-    elseif(empty($search) && !empty($category)){
+    elseif(empty($search) && !empty($category)) {
         $query .= " AND album = '$category (продажа)'";
     }
     else{
         $query .= " AND album LIKE '%продажа%'";
     }
-    $query .= " ORDER BY price ASC";
+    $query .= " ORDER BY price DESC";
+    if(empty($search) && empty($category)) {
+        $query .= " LIMIT 10";
+    }
     $result = $conn->query($query);
     while($res = $result->fetch_assoc()){
         $title = $res['name'];
