@@ -1,7 +1,7 @@
 <?php
     @$id = $_GET['id'];
     if(!empty($id)) {
-        $conn = new mysqli("a236477.mysql.mchost.ru", "a236477_1", "fwvm52cy9N5A", "a236477_1");
+        $conn = new mysqli('a236477.mysql.mchost.ru', 'a236477_1', 'fwvm52cy9N5A', 'a236477_1');
         $conn->query("SET NAMES utf8");
         $query = "SELECT * FROM goods WHERE id = $id";
         $result = $conn->query($query)->fetch_assoc();
