@@ -4,10 +4,10 @@
         <?php
             @session_start();
             if(empty($_SESSION['id'])){
-                echo '<a  title="Вход" href="/login.php">Вход</a>';
-                echo '<a  title="Регистрация" href="/register.php">Регистрация</a>';
+                echo '<a  title="Вход" href="/login">Вход</a>';
+                echo '<a  title="Регистрация" href="/register">Регистрация</a>';
             }else{
-                echo '<a  title="Выход" href="/logout.php">Выход</a>';
+                echo '<a  title="Выход" href="/logout">Выход</a>';
                 echo '<a  title="Личный кабинет" href="/account">Личный кабинет</a>';
             }
         ?>
