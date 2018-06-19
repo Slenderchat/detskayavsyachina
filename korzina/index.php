@@ -6,14 +6,17 @@
         <meta name="description" content="" />
     </head>
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-        <div class="stretchrow row">
-            <div class="table">
-                <div class="cell content">
+        <header>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
+        </header>
+        <div class="wrap">
+            <div class="menu">
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'; ?>
+            </div>
+            <div class="content">
 
-                </div>
             </div>
         </div>
-        <script src="/scripts/index.js"></script>
+    <script src="/scripts/index.js"></script>
     </body>
 </html>
