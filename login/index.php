@@ -20,10 +20,11 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'; ?>
             </div>
             <div class="content">
-                <form name="login" method="post" action="/dologin.php" class="userForm">
-                    <input type="text" name="username" placeholder="Введите имя пользователя или номер телефона">
-                    <input type="password" name="password" placeholder="Введите пароль">
-                    <input type="submit" value="Войти">
+                <form name="login" method="post" id="login" class="userForm">
+                    <label for="login" class="userFormError">Неверное имя пользователя и/или пароль</label>
+                    <input type="text" name="username" id="username" placeholder="Введите имя пользователя или номер телефона">
+                    <input type="password" name="password" id="password" placeholder="Введите пароль">
+                    <input type="button" onclick="doLogin()" value="Войти">
                 </form>
             </div>
         </div>

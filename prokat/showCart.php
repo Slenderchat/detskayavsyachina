@@ -1,14 +1,14 @@
 <?php
     session_start();
-    if(!empty($_SESSION['id'])) {
+    if(!empty($_SESSION['user'])) {
         $id = $_GET['id'];
         $conn = new mysqli('a236477.mysql.mchost.ru', 'a236477_1', 'fwvm52cy9N5A', 'a236477_1');
         $res = $conn->query("SELECT * FROM goods WHERE id=$id")->fetch_assoc();
         echo
         "<form class='goodiePopup' name=\"addtocart\" method='post' action='addtocart.php'>
             <input name='count' type='number' min='1' max='3'>
-            <input name='id' type='number'>
-            <input type='submit'>
+            <input name='art' id='art' value='$id' type='number'>
+            <input type='button' onclick='addToCart()'>
         </form>";
     }else{
         echo

@@ -50,7 +50,7 @@ function showCart(goodie, id, from) {
             popup.innerHTML = this.responseText;
         }
     };
-    req.open("GET", "/prokat/showCart.php?id=" + id);
+    req.open("GET", "/" + from + "/showCart.php?id=" + id);
     req.send();
 }
 function loadGoodies(from){
@@ -75,4 +75,47 @@ function loadGoodies(from){
     req.open("GET", url);
     req.send();
     window.history.pushState("", "", brurl);
+}
+function doLogin(){
+    "use strict";
+    var req = new XMLHttpRequest(), uname = document.getElementById('username'), passwd = document.getElementById('password');
+    req.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200){
+            var resp = JSON.parse(this.response), uname = document.getElementById('username'), passwd = document.getElementById('password'), lbl = document.getElementsByClassName('userFormError')[0];
+            if(resp.isPassInv === 1 || resp.isUnameInv ===1){
+                lbl.style.display = "block";
+            }
+            if(resp.isPassInv === 1){
+                passwd.style.borderColor = "#D81E5B";
+            }else{
+                passwd.style.borderColor = "green";
+            }
+            if(resp.isUnameInv === 1){
+                uname.style.borderColor = "#D81E5B";
+            }else{
+                uname.style.borderColor = "green";
+            }
+            if(resp.isPassInv === 0 && resp.isUnameInv === 0){
+                window.location.replace("/account");
+            }
+        }
+    };
+    req.open("POST", "/login/dologin.php");
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.send("username=" + uname.value + "&password=" + passwd.value);
+}
+function doRegister() {
+    "use strict";
+    var req = new XMLHttpRequest(), uname = document.getElementById("username"), passwd = document.getElementById("password"), email = document.getElementById("email"), fname = document.getElementById("firstname"), lname = document.getElementById("lastname"), tname = document.getElementById("thirdname"), pnum = document.getElementById("phonenumber"), adrr = document.getElementById("address"), met = document.getElementById("metro");
+    req.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200){
+            var resp = JSON.parse(this.response);
+            if(resp.isSuccessful === 1){
+                window.location.replace("/account");
+            }
+        }
+    };
+    req.open("POST", "/register/doregister.php");
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.send("username=" + uname.value + "&password=" + passwd.value + "&email=" + email.value + "&firstname=" + fname.value + "&lastname=" + lname.value + "&thirdname=" + tname.value + "&phonenumber=" + pnum.value + "&address=" + adrr.value + "&metro=" + met.value);
 }

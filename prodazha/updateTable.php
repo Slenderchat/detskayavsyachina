@@ -44,7 +44,7 @@
             </div>
             <div class=\"goodieControls\">
                 <a class=\"button\" title=\"К описанию\" href=\"/prodazha/tovar/?id=$id\">К описанию</a>
-                <a class=\"button\" title=\"В корзину\" href=\"#\" onclick='showCartProkat(this, $id)'>В корзину</a>
+                <a class=\"button\" title=\"В корзину\" href=\"#\" onclick='showCart(this, $id, \"prodazha\")'>В корзину</a>
             </div>
         </div>";
     }

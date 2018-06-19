@@ -3,7 +3,7 @@
         <a title="Меню" href="#menu" onclick="toggleMenu()"><i class="material-icons">menu</i></a>
         <?php
             @session_start();
-            if(empty($_SESSION['id'])){
+            if(empty($_SESSION['user'])){
                 echo '<a  title="Вход" href="/login">Вход</a>';
                 echo '<a  title="Регистрация" href="/register">Регистрация</a>';
             }else{

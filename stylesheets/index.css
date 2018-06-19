@@ -214,6 +214,7 @@ header .headerwrap{
     border-radius: 8px;
     width: 100%;
     margin-bottom: 5px;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 .userForm input:invalid{
     border-color: #D81E5B;
@@ -221,8 +222,17 @@ header .headerwrap{
 .userForm input:valid{
     border-color: green;
 }
+.userForm input:focus{
+    outline: none;
+}
+.userForm input[type="button"], .userForm input[type="submit"]{
+    border-radius: 0;
+    box-shadow: none;
+    border-color: transparent;
+}
 .userForm label{
     display: none;
+    color: #D81E5B;
 }
 @media screen and (min-width: 375px){
     header{

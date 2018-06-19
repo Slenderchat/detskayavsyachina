@@ -39,7 +39,7 @@
                     <input type="text" name="address" id="address" placeholder="Адрес" required maxlength="255" pattern="(([а-яА-Я0-9 .,])+)">
                     <label for="metro">Только символы кирилицы, запятая и пробел</label>
                     <input type="text" name="metro" id="metro" placeholder="Метро" required maxlength="50" pattern="(([а-я А-Я])+)">
-                    <input type="submit" value="Зарегистрироваться">
+                    <input type="button" onclick="doRegister()" value="Зарегистрироваться">
                 </form>
             </div>
         </div>
