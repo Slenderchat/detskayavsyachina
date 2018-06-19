@@ -9,16 +9,14 @@
         $category = null;
     }
     if(!empty($search) && !empty($category)){
-        $query .= " AND name LIKE '%$search%' AND album = '$category'";
+        $query .= " AND name LIKE '%$search%' AND album = '$category' ORDER BY price DESC";
     }elseif(!empty($search) && empty($category)){
-        $query .= " AND name LIKE '%$search%'";
+        $query .= " AND name LIKE '%$search%' ORDER BY price DESC";
     }
     elseif(empty($search) && !empty($category)){
-        $query .= " AND album = '$category'";
-    }
-    $query .= " ORDER BY price DESC";
-    if(empty($search) && empty($category)){
-        $query .= " LIMIT 10";
+        $query .= " AND album = '$category' ORDER BY price DESC";
+    }elseif(empty($search) && empty($category)){
+        $query .= " AND album NOT LIKE '%(продажа)%' ORDER BY price DESC LIMIT 10";
     }
     $result = $conn->query($query);
     while($res = $result->fetch_assoc()){
