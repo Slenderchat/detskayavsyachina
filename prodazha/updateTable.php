@@ -36,10 +36,7 @@
             <div class='goodieBody'>
                 <div class='goodieThumb'>
                     <img alt=\"$title\" src=\"$image\">
-                    <div class=\"price\">$price руб.</div>
-                </div>
-                <div class='goodieInfo'>
-                    $desc
+                    <h3 class=\"price\">$price руб.</h3>
                 </div>
             </div>
             <div class=\"goodieControls\">

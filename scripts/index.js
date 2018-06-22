@@ -119,3 +119,14 @@ function doRegister() {
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     req.send("username=" + uname.value + "&password=" + passwd.value + "&email=" + email.value + "&firstname=" + fname.value + "&lastname=" + lname.value + "&thirdname=" + tname.value + "&phonenumber=" + pnum.value + "&address=" + adrr.value + "&metro=" + met.value);
 }
+function loadNews() {
+    "use strict";
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+      if(this.readyState === 4 && this.status === 200){
+          document.getElementById("news").innerHTML = this.responseText;
+      }
+    };
+    req.open("GET", "updateNews.php");
+    req.send();
+}

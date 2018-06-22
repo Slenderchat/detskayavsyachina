@@ -9,7 +9,7 @@ a{
     color: inherit;
 }
 html{
-    font-size: 0.8em;
+    font-size: 16px;
     height: 100%;
 }
 body{
@@ -22,12 +22,18 @@ table{
     margin: 0 auto;
 }
 i{
-    font-size: 1em !important;
+    font-size: 24px !important;
     vertical-align: text-bottom;
+}
+input, select{
+    border: 1px solid rgba(0,0,0,.6);
+    box-shadow: inset 0 0 20px 0 rgba(0,0,0,.2);
+    border-radius: 8px;
+    text-align: center;
+    padding: 2.5px;
 }
 header{
     position: relative;
-    font-size: 1em;
     height: 86px;
     background: scroll #BAD9D4 url("/images/upper-cover.jpg") no-repeat;
     background-size: contain;
@@ -61,8 +67,7 @@ header .headerwrap{
     display: flex;
     flex: 1;
     flex-flow: row nowrap;
-    background-color: #444545;
-    color: white;
+    background-color: #eeeeee;
 }
 .menu{
     position: absolute;
@@ -86,14 +91,14 @@ header .headerwrap{
     padding: 20px;
 }
 .content a{
-    color: #ff0066;
-    background-color: #ff99c2;
-    border-bottom: #ff0066 dashed 2px;
+    color: #880E4F;
+    background-color: #F8BBD0;
+    border-bottom: #880E4F dashed 2px;
 }
 .content .price{
-    color: #ff6600;
-    border-bottom: #ff6600 dashed 2px;
-    background-color: #ffd1b3;
+    color: #1B5E20;
+    border-bottom: #1B5E20 dashed 2px;
+    background-color: #c8e6c9;
 }
 .sell{
     display: flex;
@@ -104,17 +109,21 @@ header .headerwrap{
     flex-flow: row wrap;
     justify-content: space-around;
     text-align: center;
-    background-color: #D81E5B;
+    background-color: #4caf50;
     border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+    padding: 5px;
 }
 .sellView{
     display: flex;
-    background-color: #3A3335;
-    flex-flow: column nowrap;
-    justify-content: space-around;
+    background-color: #ffffff;
+    flex-flow: row wrap;
+    justify-content: center;
     padding: 20px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
 }
 .goodie{
+    width: 250px;
     position: relative;
     display: flex;
     padding: 20px;
@@ -122,11 +131,10 @@ header .headerwrap{
     text-align: center;
     justify-content: space-between;
     margin-bottom: 5px;
-    border: black solid 2px;
+    border: black solid 1px;
     border-radius: 8px;
-}
-.goodie h2{
-    font-size: 1em;
+    box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, .2);
+    margin-right: 5px;
 }
 .goodieBody{
     display: flex;
@@ -175,6 +183,10 @@ header .headerwrap{
     position: relative;
     white-space: nowrap;
     overflow: visible;
+    border-radius: 32px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+    padding: 20px;
 }
 #imgview{
     overflow: hidden;
@@ -186,8 +198,7 @@ header .headerwrap{
     vertical-align: middle;
 }
 .imgview i{
-    font-size: 1.5em !important;
-    color: #F08700;
+    color: #673ab7;
 }
 .imgview i:first-child{
     position: absolute;
@@ -207,32 +218,43 @@ header .headerwrap{
 .userForm input{
     text-align: center;
     padding: 5px;
-    font-size: 1rem;
-    color: white;
-    background-color: #3A3335;
-    border: #3A3335 solid 2px;
-    border-radius: 8px;
+    background-color: #ffffff;
     width: 100%;
     margin-bottom: 5px;
-    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 .userForm input:invalid{
-    border-color: #D81E5B;
+    border: 2px solid #e91e63;
 }
 .userForm input:valid{
-    border-color: green;
+    border: 2px solid #4caf50;
 }
 .userForm input:focus{
     outline: none;
 }
 .userForm input[type="button"], .userForm input[type="submit"]{
     border-radius: 0;
-    box-shadow: none;
-    border-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+    border: 0;
 }
 .userForm label{
     display: none;
     color: #D81E5B;
+}
+.new{
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+}
+.newBody h2{
+    text-align: center;
+}
+.newBody h3{
+    text-align: justify;
+}
+.newBody h3:last-child{
+    text-align: right;
 }
 @media screen and (min-width: 375px){
     header{
@@ -248,36 +270,9 @@ header .headerwrap{
     header{
         height: 206px;
     }
-    header, i{
-        font-size: 1.25em !important;
-    }
-    .goodieThumb img{
-        margin: 0;
-    }
-    .goodieInfo{
-        display: block;
-        padding: 5px;
-        text-align: justify;
-    }
-}
-@media screen and (min-width: 1024px) {
-    body, html{
-        font-size: 1em;
-    }
-}
-@media screen and (min-width: 1440px){
-    body, html{
-        font-size: 1.5em;
-    }
 }
 @media screen and (min-width: 2560px){
     header{
         height: 400px;
-    }
-    header, i{
-        font-size: 1.5em !important;
-    }
-    body, html {
-        font-size: 2em;
     }
 }

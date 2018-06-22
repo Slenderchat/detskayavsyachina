@@ -13,43 +13,8 @@
             <div class="menu">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'; ?>
             </div>
-            <div class="content">
-                <?php
-                @$id = $_GET['id'];
-                $conn = new mysqli('a236477.mysql.mchost.ru', 'a236477_1', 'fwvm52cy9N5A', 'a236477_1');
-                $conn->query("SET NAMES utf8");
-                $query = "SELECT * FROM news WHERE 1";
-                if(!empty($id)){
-                    $query .= " AND id = '$id";
-                }
-                $query .= " ORDER BY id DESC";
-                $result = $conn->query($query);
-                while($res = $result->fetch_assoc()){
-                    $name = $res['name'];
-                    $thumb = $res['thumb'];
-                    $description = $res['description'];
-                    $date = $res['date'];
-                    echo
-                    "<div class=\"new\">
-                                <div class=\"table\">";
-                    if(!empty($thumb)){
-                        echo
-                        "<div class=\"cell\">
-                                        <img alt=\"$name\" src=\"$thumb\">
-                                    </div>";
-                    }
-                    echo
-                    "<div class=\"cell\">
-                                            <h1>$name</h1>
-                                            <h3>$description</h3>
-                                            <h4>$date</h4>
-                                    </div>
-                                </div>
-                            </div>";
-                }
-                $conn->close();
-                ?>
-            </div>
+            <script src="/scripts/index.js"></script>
+            <div class="content news" id="news"><script>loadNews();</script></div>
         </div>
     <script src="/scripts/index.js"></script>
     </body>

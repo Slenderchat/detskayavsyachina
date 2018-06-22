@@ -37,23 +37,25 @@
                     "<div class=\"tovar\">
                         <h1>$name</h1>
                         <div class=\"imgview\">
-                            <i class=\"material-icons\" onclick=\"doScroll(\"left\")\">arrow_back_ios</i>
-                            <img src=\"$thumb\" />";
-                            if(!empty($image0)){
-                                echo "<img src=\"$image0\" />";
-                            }if(!empty($image1)){
-                                echo "<img src=\"$image1\" />";
-                            }if(!empty($image2)){
-                                echo "<img src=\"$image2\" />";
-                            }if(!empty($image3)){
-                                echo "<img src=\"$image3\" />";
-                            }
+                            <i class=\"material-icons\" onclick=\"doScroll('left')\">arrow_back_ios</i>
+                            <div id=\"imgview\">
+                                <img src=\"$thumb\" />";
+                                if(!empty($image0)){
+                                    echo "<img src=\"$image0\" />";
+                                }if(!empty($image1)){
+                                    echo "<img src=\"$image1\" />";
+                                }if(!empty($image2)){
+                                    echo "<img src=\"$image2\" />";
+                                }if(!empty($image3)){
+                                    echo "<img src=\"$image3\" />";
+                                }
                             echo
-                           "<i class=\"material-icons\" onclick=\"doScroll(\"right\")\">arrow_forward_ios</i>
+                           "</div>
+                            <i class=\"material-icons\" onclick=\"doScroll('right')\">arrow_forward_ios</i>
                             </div>
                                 <h2>Стоимость</h2>
                                 <p><span class=\"price\">$price рублей</span></p>
-                                <h3>Описание</h3>
+                                <h2>Описание</h2>
                                 <p>$description</p>
                             </div>
                         </div>
