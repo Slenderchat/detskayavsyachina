@@ -2,8 +2,8 @@
 <html lang="ru">
     <head>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.html'; ?>
-        <title></title>
-        <meta name="description" content="" />
+        <title>Корзина</title>
+        <meta name="description" content="Корзина" />
     </head>
     <body>
         <header>
