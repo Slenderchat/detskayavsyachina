@@ -21,7 +21,7 @@
     }
     $query .= " ORDER BY price DESC";
     if(empty($search) && empty($category)) {
-        $query .= " LIMIT 10";
+        $query .= " LIMIT 8";
     }
     $result = $conn->query($query);
     while($res = $result->fetch_assoc()){

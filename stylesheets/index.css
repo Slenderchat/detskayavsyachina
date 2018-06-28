@@ -118,7 +118,7 @@ header .headerwrap{
     display: flex;
     background-color: #ffffff;
     flex-flow: row wrap;
-    justify-content: center;
+	justify-content: space-between; 
     padding: 20px;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
 }

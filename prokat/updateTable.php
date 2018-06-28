@@ -16,7 +16,7 @@
     elseif(empty($search) && !empty($category)){
         $query .= " AND album = '$category' ORDER BY price DESC";
     }elseif(empty($search) && empty($category)){
-        $query .= " AND album NOT LIKE '%(продажа)%' ORDER BY price DESC LIMIT 10";
+        $query .= " AND album NOT LIKE '%(продажа)%' ORDER BY price DESC LIMIT 8";
     }
     $result = $conn->query($query);
     while($res = $result->fetch_assoc()){
