@@ -160,6 +160,38 @@ input::placeholder, textarea::placeholder, select::placeholder{
 .pageControls{
     padding: 16px;
 }
+.gallery{
+    position: relative;
+    height: 50vh;
+}
+.galleryPictures{
+    height: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+.gallery i{
+    font-size: 3rem;
+    color: rgba(0,0,0,.75);
+}
+.gallery i:first-of-type{
+    position: absolute;
+    top: 40%;
+    left: -20px;
+}
+.gallery i:last-of-type{
+    position: absolute;
+    top: 40%;
+    right: -20px;
+}
+.gallery picture{
+    display: inline-block;
+    height: 100%;
+    max-width: 100%;
+}
+.gallery img{
+    display: inline-block;
+    height: 100%;
+}
 @media (max-width: 768px) {
     .tovar{
         width: 80%;

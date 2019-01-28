@@ -2,7 +2,7 @@
     $conn = new mysqli("localhost", "id8550022_detskayavsyachina", "%sha512pass%", "id8550022_detskayavsyachina");
     if($conn){
         $id = $_GET['id'];
-        $query = 'SELECT `name`,`photo0_x75`,`photo0_x130`,`photo0_x604`,`photo0_x807`,`photo0_x1280`,`photo1_x75`,`photo1_x130`,`photo1_x604`, `photo2_x75`, `photo2_x130`, `photo2_x604`, `photo2_x807`, `photo2_x1280`, `photo2_x2560`, `photo3_x75`, `photo3_x130`, `photo3_x604`, `photo3_x807`, `photo3_x1280`, `photo3_x2560`, `desc`, `price` FROM `tovary` WHERE `id` = ' . $id;
+        $query = 'SELECT `name`,`photo0_x604`,`photo0_x807`,`photo0_x1280`,`photo1_x604`,`photo2_x604`,`photo2_x807`,`photo2_x1280`,`photo2_x2560`,`photo3_x604`,`photo3_x807`,`photo3_x1280`,`photo3_x2560`,`desc`,`price` FROM `tovary` WHERE `id` = ' . $id;
         $res = $conn->query($query);
         if($res){
             $res = $res->fetch_array();
@@ -26,43 +26,81 @@
         <div class="content">
             <h1><?php echo $res[0]?></h1>
             <div class="gallery">
-                <picture>
-                    <source srcset="<?php echo $res[1]?>" media="(max-width: 75px)">
-                    <source srcset="<?php echo $res[2]?>" media="(max-width: 130px)">
-                    <source srcset="<?php echo $res[3]?>" media="(max-width: 604px)">
-                    <source srcset="<?php echo $res[4]?>" media="(max-width: 807px)">
-                    <source srcset="<?php echo $res[5]?>" media="(min-width: 807px)">
-                    <img src="<?php echo $res[5]?>">
-                </picture>
-                <picture>
-                    <source srcset="<?php echo $res[6]?>" media="(max-width: 75x)">
-                    <source srcset="<?php echo $res[7]?>" media="(max-width: 130px)">
-                    <source srcset="<?php echo $res[8]?>" media="(min-width: 130px)">
-                    <img src="<?php echo $res[8]?>">
-                </picture>
-                <picture>
-                    <source srcset="<?php echo $res[9]?>" media="(max-width: 75px)">
-                    <source srcset="<?php echo $res[10]?>" media="(max-width: 130px)">
-                    <source srcset="<?php echo $res[11]?>" media="(max-width: 604px)">
-                    <source srcset="<?php echo $res[12]?>" media="(max-width: 807px)">
-                    <source srcset="<?php echo $res[13]?>" media="(max-width: 1280px)">
-                    <source srcset="<?php echo $res[14]?>" media="(min-width: 1280px)">
-                    <img src="<?php echo $res[14]?>">
-                </picture>
-                <picture>
-                    <source srcset="<?php echo $res[15]?>" media="(max-width: 75px)">
-                    <source srcset="<?php echo $res[16]?>" media="(max-width: 130px)">
-                    <source srcset="<?php echo $res[17]?>" media="(max-width: 604px)">
-                    <source srcset="<?php echo $res[18]?>" media="(max-width: 807px)">
-                    <source srcset="<?php echo $res[19]?>" media="(max-width: 1280px)">
-                    <source srcset="<?php echo $res[20]?>" media="(min-width: 1280px)">
-                    <img src="<?php echo $res[20]?>">
-                </picture>
+                <i class="material-icons">navigate_before</i>
+                <div class="galleryPictures">
+                    <picture>
+                        <?php $ls = 0;
+                        for($i=1;$i <= 3;$i++){
+                                if($res[$i] != ''){
+                                    switch ($i){
+                                        case '1':
+                                            $dim = "max-width: 604px";
+                                            break;
+                                        case '2':
+                                            $dim = "max-width: 807px";
+                                            break;
+                                    }
+                                    echo "<source srcset=\"" . $res[$i] . "\" media = \"" . $dim . "\">";
+                                    $ls = $i;
+                                }
+                            }
+                        echo "<img src=\"" . $res[$ls] . "\">"; ?>
+                    </picture>
+                    <picture>
+                        <?php
+                            if($res[4] != ''){
+                                echo "<img src=\"" . $res[4] . "\">";
+                            } ?>
+                    </picture>
+                    <picture>
+                        <?php $ls = 0;
+                        for($i=5;$i <= 8;$i++){
+                            if($res[$i] != ''){
+                                switch ($i){
+                                    case '5':
+                                        $dim = "max-width: 604px";
+                                        break;
+                                    case '6':
+                                        $dim = "max-width: 807px";
+                                        break;
+                                    case '7':
+                                        $dim = "max-width: 1280px";
+                                        break;
+                                }
+                                echo "<source srcset=\"" . $res[$i] . "\" media = \"" . $dim . "\">";
+                                $ls = $i;
+                            }
+                        }
+                        echo "<img src=\"" . $res[$ls] . "\">"; ?>
+                    </picture>
+                    <picture>
+                        <?php $ls = 0;
+                        for($i=9;$i <= 12;$i++){
+                            if($res[$i] != ''){
+                                switch ($i){
+                                    case '9':
+                                        $dim = "max-width: 604px";
+                                        break;
+                                    case '10':
+                                        $dim = "max-width: 807px";
+                                        break;
+                                    case '11':
+                                        $dim = "max-width: 1280px";
+                                }
+                                echo "<source srcset=\"" . $res[$i] . "\" media = \"" . $dim . "\">";
+                                $ls = $i;
+                            }
+                        }
+                        echo "<img src=\"" . $res[$ls] . "\">"; ?>
+                    </picture>
+                </div>
+                <i class="material-icons">navigate_next</i>
             </div>
-            <span class="price"><?php echo $res[22]?> руб.</span>
-            <div class="text">
-                <?php echo $res[21]?>
-            </div>
+            <p><span class="price"><?php echo $res[14]?> руб.</span></p>
+            <p>
+                <?php echo $res[13]?>
+            </p>
         </div>
+        <script src="/scripts/gallery.js"></script>
     </body>
 </html>

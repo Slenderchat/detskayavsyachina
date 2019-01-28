@@ -50,7 +50,7 @@ if($conn) {
     if($res){
         $res = $res->fetch_all();
         foreach ($res as $value){
-            $catalog .= '<div class=\"tovar\" onclick=\"location.href=\'tovar/?id=' . $value[3] . '\'\">' . '<img src=' . $value[0] . '>' . '<h2>' . $value[1] . '</h2>' . '<div class=\"price\" style=\"text-align: center\">' . $value[2] . ' руб.</div>' . '</div>' . '\n';
+            $catalog .= '<div class=\"tovar\" onclick=\"location.href=\'/catalog/tovar/?id=' . $value[3] . '\'\">' . '<img src=' . $value[0] . '>' . '<h2>' . $value[1] . '</h2>' . '<div class=\"price\" style=\"text-align: center\">' . $value[2] . ' руб.</div>' . '</div>' . '\n';
         }
     }
     $response = "{
