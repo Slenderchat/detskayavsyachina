@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    background-color: #e6e6e6;
+    margin: 0;
+}
+img{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+    color: #ff0066;
+    padding: 3px;
+    border-bottom: #ff0066 dashed thin;
+    margin: 3px;
+}
+em{
+    font-style: normal;
+    color: rgba(255,0,0,1);
+    padding: 3px;
+}
+p{
+    display: table;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 16px;
+}
+table{
+    margin: 0 auto;
+}
+td{
+    padding: 6px;
+}
+iframe{
+    max-width: 100%;
+}
+ol{
+    display: table;
+    margin: 0 auto;
+    text-align: justify;
+}
+input, textarea, select{
+    display: block;
+    margin: 16px auto;
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,.5);
+    border: 0;
+    outline: none;
+    width: 100%;
+    max-width: 820px;
+}
+input[type="submit"]:active, input[type="button"]:active{
+    box-shadow: none;
+}
+textarea{
+    height: 10em;
+}
+input::placeholder, textarea::placeholder, select::placeholder{
+    text-align: center;
+}
+.price{
+    margin: 3px;
+    padding: 3px;
+    color: #ff0000;
+}
+.spoiler{
+    display: table;
+    margin: 0 auto;
+}
+.spoilerHead {
+    padding: 6px;
+    border-radius: 16px;
+    background-color: #33cc33;
+}
+.spoilerHead i{
+    vertical-align: middle;
+}
+.spoilerContent{
+    max-height: 0;
+    transform: scaleY(0);
+    border: #33cc33 dashed;
+    border-radius: 0 0 16px 16px;
+    transition: max-height 750ms, transform 750ms;
+    padding: 6px;
+}
+.logo{
+    text-align: center;
+    background-color: #BAD9D4;
+}
+.menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+.menu li{
+    float: left;
+    width: 25%;
+}
+.menu a{
+    display: block;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px;
+    border: none;
+    margin: 0;
+}
+.menu li:hover{
+    background-color: #66ccff;
+}
+.content{
+    padding: 16px;
+    text-align: center;
+}
+.catalogWrap{
+    box-shadow: 0 0 16px 0 rgba(0,0,0.5);
+    border-radius: 16px;
+}
+.catalogControls {
+    padding: 6px;
+    border-radius: 16px 16px 0 0;
+    background-color: #33cc33;
+}
+.catalogControls input, .catalogControls select{
+    display: inline-block;
+    margin-left: 6px;
+    max-width: 46%;
+}
+.catalogControls select{
+    display: inline-block;
+    margin-left: 6px;
+    width: 105px;
+}
+.catalogControls i{
+    display: inline-block;
+    vertical-align: middle;
+}
+.tovar{
+    display: inline-block;
+    padding: 6px;
+    margin: 16px;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,.5);
+    width: 30%;
+}
+.tovar:hover{
+    background-color: #BAD9D4;
+}
+.pageControls{
+    padding: 16px;
+}
+@media (max-width: 768px) {
+    .tovar{
+        width: 80%;
+    }
+}
+@media (min-width: 768px) {
+    .tovar{
+        width: 45%;
+    }
+}
+@media (min-width: 1024px) {
+    .tovar{
+        width: 20%;
+    }
+}
