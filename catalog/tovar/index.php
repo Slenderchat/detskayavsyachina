@@ -96,7 +96,7 @@
                 </div>
                 <i class="material-icons">navigate_next</i>
             </div>
-            <p><span class="price"><?php echo $res[14]?> руб.</span></p>
+            <p><span class="tovarPrice"><?php echo $res[14]?> руб.</span></p>
             <p>
                 <?php echo $res[13]?>
             </p>

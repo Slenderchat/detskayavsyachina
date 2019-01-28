@@ -4,11 +4,13 @@
 }
 html{
     height: 100%;
+    background: url(/images/toys.jpg) repeat;
+    background-size: 20%;
 }
 body{
-    height: 100%;
-    background-color: #e6e6e6;
+    min-height: 100%;
     margin: 0;
+    background: rgba(255,255,255,.5);
 }
 img{
     display: inline-block;
@@ -32,7 +34,7 @@ p{
     display: table;
     text-align: justify;
     margin: 0 auto;
-    padding: 16px;
+    padding: 6px;
 }
 table{
     margin: 0 auto;
@@ -67,6 +69,9 @@ textarea{
 }
 input::placeholder, textarea::placeholder, select::placeholder{
     text-align: center;
+}
+h1, h2, h3{
+    margin: 6px 0;
 }
 .price{
     margin: 3px;
@@ -125,6 +130,7 @@ input::placeholder, textarea::placeholder, select::placeholder{
     text-align: center;
 }
 .catalogWrap{
+    background-color: #ffffff;
     box-shadow: 0 0 16px 0 rgba(0,0,0.5);
     border-radius: 16px;
 }
@@ -157,16 +163,24 @@ input::placeholder, textarea::placeholder, select::placeholder{
 .tovar:hover{
     background-color: #BAD9D4;
 }
+.tovarPrice{
+    margin: 3px;
+    padding: 3px;
+    color: #ff0000;
+    font-size: 200%;
+}
 .pageControls{
     padding: 16px;
 }
 .gallery{
     position: relative;
+    overflow: hidden;
     height: 50vh;
+    background-color: white;
 }
 .galleryPictures{
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     white-space: nowrap;
 }
 .gallery i{
@@ -176,15 +190,16 @@ input::placeholder, textarea::placeholder, select::placeholder{
 .gallery i:first-of-type{
     position: absolute;
     top: 40%;
-    left: -20px;
+    left: 0;
 }
 .gallery i:last-of-type{
     position: absolute;
     top: 40%;
-    right: -20px;
+    right: 0;
 }
 .gallery picture{
     display: inline-block;
+    vertical-align: top;
     height: 100%;
     max-width: 100%;
 }
